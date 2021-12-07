@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+	<title>Editar Lance</title>
+</h:head>
+<h:body>
+<h:form id="formulario">
+		<p:messages id="messages" showDetail="true" closable="true">
+			<p:autoUpdate/>
+		</p:messages>
+		
+		<p:panel header="Editar Lances">
+		<h:inputHidden value="#{lanceBean.lance.id}"/>
+			<p:panelGrid columns="3">
+			
+					<p:outputLabel value="Descricao:" for="descricao"/>
+					<p:inputText value="#{lanceBean.lance.descricao}" id="descricao" required="true" requiredMessage="Campo Obrigatório"/>
+					<p:message for="descricao"/>
+					
+					<p:outputLabel value="v1:" for="v1"/>
+					<p:inputText value="#{lanceBean.lance.v1}" id="v1" required="true" requiredMessage="Campo Obrigatório"/>
+					<p:message for="v1"/>	
+								
+					<p:outputLabel value="v2:" for="v2"/>
+					<p:inputText value="#{lanceBean.lance.v2}" id="v2" required="true" requiredMessage="Campo Obrigatório"/>
+					<p:message for="v2"/>
+					
+					<p:outputLabel value="v3:" for="v3"/>
+					<p:inputText value="#{lanceBean.lance.v3}" id="v3" required="true" requiredMessage="Campo Obrigatório"/>
+					<p:message for="v3"/>
+													
+					<p:commandButton value="Salvar" action="#{lanceBean.editar}" update="formulario"/>
+					<p:link value="Listagem" outcome="listagem"/>
+				</p:panelGrid>
+		</p:panel>				
+</h:form>
+</h:body>
+</html>
